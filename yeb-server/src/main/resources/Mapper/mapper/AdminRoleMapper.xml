@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.AdminRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.AdminRole">
+        <id column="id" property="id"/>
+        <result column="adminId" property="adminid"/>
+        <result column="rid" property="rid"/>
+    </resultMap>
+
+    <sql id="Base_column_List">
+        id
+        ,adminId,rid
+    </sql>
+
+    <update id="addAdminRole">
+        INSERT into t_admin_role(adminId,rid) values
+        <foreach collection="rids" item="rid" separator=",">
+            (#{adminId},#{rid})
+        </foreach>
+    </update>
+</mapper>
