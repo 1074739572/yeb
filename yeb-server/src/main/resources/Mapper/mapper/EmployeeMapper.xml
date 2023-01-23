@@ -7,31 +7,31 @@
         <result column="name" property="name"/>
         <result column="gender" property="gender"/>
         <result column="birthday" property="birthday"/>
-        <result column="id_card" property="idCard"/>
+        <result column="idCard" property="idCard"/>
         <result column="wedlock" property="wedlock"/>
-        <result column="nation_id" property="nationId"/>
-        <result column="native_place" property="nativePlace"/>
-        <result column="politic_id" property="politicId"/>
+        <result column="nationId" property="nationId"/>
+        <result column="nativePlace" property="nativePlace"/>
+        <result column="politicId" property="politicId"/>
         <result column="email" property="email"/>
         <result column="phone" property="phone"/>
         <result column="address" property="address"/>
-        <result column="department_id" property="departmentId"/>
-        <result column="job_level_id" property="jobLevelId"/>
-        <result column="pos_id" property="posId"/>
-        <result column="engage_form" property="engageForm"/>
-        <result column="tiptop_degree" property="tiptopDegree"/>
+        <result column="departmentId" property="departmentId"/>
+        <result column="jobLevelId" property="jobLevelId"/>
+        <result column="posId" property="posId"/>
+        <result column="engageForm" property="engageForm"/>
+        <result column="tiptopDegree" property="tiptopDegree"/>
         <result column="specialty" property="specialty"/>
         <result column="school" property="school"/>
-        <result column="begin_date" property="beginDate"/>
-        <result column="work_state" property="workState"/>
-        <result column="work_id" property="workId"/>
-        <result column="contract_term" property="contractTerm"/>
-        <result column="conversion_time" property="conversionTime"/>
+        <result column="beginDate" property="beginDate"/>
+        <result column="workState" property="workState"/>
+        <result column="workId" property="workId"/>
+        <result column="contractTerm" property="contractTerm"/>
+        <result column="conversionTime" property="conversionTime"/>
         <result column="notWorkDate" property="notworkDate"/>
-        <result column="begin_contract" property="beginContract"/>
-        <result column="end_contract" property="endContract"/>
-        <result column="work_age" property="workAge"/>
-        <result column="salary_id" property="salaryId"/>
+        <result column="beginContract" property="beginContract"/>
+        <result column="endContract" property="endContract"/>
+        <result column="workAge" property="workAge"/>
+        <result column="salaryId" property="salaryId"/>
     </resultMap>
 
     <resultMap id="EmployeeInfo" type="com.xxxx.server.pojo.Employee" extends="BaseResultMap">
@@ -70,7 +70,7 @@
             <result column="smedicalBase" property="medicalbase"/>
             <result column="smedicalPer" property="medicalper"/>
             <result column="saccumulationFundBase" property="accumulationfundbase"/>
-            <result column="saccumulationFund_Per" property="accumulationfundper"/>
+            <result column="saccumulationFundPer" property="accumulationfundper"/>
         </association>
         <association property="department" javaType="com.xxxx.server.pojo.Department">
             <result column="dname" property="name"/>
@@ -122,9 +122,6 @@
         </if>
         <if test="null!=employee.jobLevelId">
             AND e.jobLevelId =#{employee.jobLevelId}
-        </if>
-        <if test="null!=employee.posId">
-            AND e.posId =#{employee.posId}
         </if>
         <if test="null!=employee.engageForm and ''!=employee.engageForm">
             AND e.engageForm =#{employee.engageForm}
